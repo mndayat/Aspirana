@@ -15,16 +15,21 @@
                 <i class="fas fa-handshake"></i>
                 <span>Aspirana</span>
             </div>
-            <ul class="nav-menu">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="report-list.html">Laporan</a></li>
                 <li><a href="forum.html">Forum</a></li>
                 <li><a href="map.html" class="active">Peta</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
             </ul>
-            <button class="btn-primary" onclick="window.location.href='report-form.html'">
-                <i class="fas fa-plus"></i> Kirim Laporan
-            </button>
+            <div class="nav-actions">
+                <button class="btn-primary" onclick="window.location.href='report-form.html'">
+                    <i class="fas fa-plus"></i> <span>Kirim Laporan</span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -304,6 +309,31 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const icon = mobileMenuToggle?.querySelector('i');
+            
+            if (mobileMenuToggle && icon) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                });
+                
+                const menuLinks = navMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 

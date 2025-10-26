@@ -133,6 +133,78 @@ body {
     background: rgba(52, 152, 219, 0.1);
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* Mobile Navigation */
+@media (max-width: 968px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-lg);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-bottom: 1px solid #eee;
+        text-align: left;
+    }
+
+    .nav-actions {
+        gap: var(--spacing-xs);
+    }
+
+    .btn-primary {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .btn-primary span {
+        display: none;
+    }
+
+    .btn-primary i {
+        margin: 0;
+    }
+}
+
 /* ============================================
    BUTTONS
    ============================================ */
@@ -1833,10 +1905,6 @@ code {
     .hero-buttons {
         flex-direction: column;
     }
-
-    .nav-menu {
-        display: none;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1874,6 +1942,47 @@ code {
     .report-header {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 100%;
+        margin-left: 0;
+        margin-top: var(--spacing-sm);
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .form-container {
+        padding: var(--spacing-md);
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .map-layout {
+        height: auto;
+    }
+
+    .map-reports-sidebar {
+        max-height: 400px;
+    }
+
+    .topic-card {
+        padding: var(--spacing-sm);
     }
 }
 
