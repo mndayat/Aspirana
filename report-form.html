@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirim Laporan - Aspirana</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-handshake"></i>
+                <span>Aspirana</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="report-list.html" class="active">Laporan</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="map.html">Peta</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <button class="btn-primary" onclick="window.location.href='report-form.html'">
+                <i class="fas fa-plus"></i> Kirim Laporan
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-edit"></i> Kirim Laporan Baru</h1>
+            <p>Laporkan masalah di sekitar Anda dengan mudah dan cepat</p>
+        </div>
+    </section>
+
+    <!-- Report Form -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <form id="reportForm">
+                    <!-- Basic Information -->
+                    <div class="form-group">
+                        <div class="form-header">
+                            <h2><i class="fas fa-info-circle"></i> Informasi Dasar</h2>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="title">Judul Laporan <span class="required">*</span></label>
+                            <input type="text" id="title" name="title" required placeholder="Misalnya: Jalan Berlubang di Jl. Sudirman">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="category">Kategori Masalah <span class="required">*</span></label>
+                            <select id="category" name="category" required>
+                                <option value="">Pilih Kategori</option>
+                                <option value="infrastructure">🏗️ Infrastruktur</option>
+                                <option value="environment">🌱 Lingkungan</option>
+                                <option value="utilities">💧 Pelayanan Publik</option>
+                                <option value="transportation">🚌 Transportasi</option>
+                                <option value="security">👮 Keamanan</option>
+                                <option value="health">🏥 Kesehatan</option>
+                                <option value="education">📚 Pendidikan</option>
+                                <option value="other">🔧 Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="description">Deskripsi Masalah <span class="required">*</span></label>
+                            <textarea id="description" name="description" rows="5" required placeholder="Jelaskan masalah secara detail..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="form-group">
+                        <div class="form-header">
+                            <h2><i class="fas fa-map-marker-alt"></i> Lokasi</h2>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="address">Alamat Lengkap <span class="required">*</span></label>
+                            <input type="text" id="address" name="address" required placeholder="Jalan, Nomor, RT/RW, Kelurahan">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="city">Kota/Kabupaten <span class="required">*</span></label>
+                                <input type="text" id="city" name="city" required placeholder="Jakarta Pusat">
+                            </div>
+                            <div class="form-field">
+                                <label for="district">Kecamatan</label>
+                                <input type="text" id="district" name="district" placeholder="Gambir">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="coordinates">Koordinat (Opsional)</label>
+                            <div class="input-group">
+                                <input type="number" id="lat" name="lat" step="any" placeholder="Latitude">
+                                <input type="number" id="lng" name="lng" step="any" placeholder="Longitude">
+                                <button type="button" class="btn-secondary" onclick="getCurrentLocation()">
+                                    <i class="fas fa-crosshairs"></i> Ambil Lokasi
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload Files -->
+                    <div class="form-group">
+                        <div class="form-header">
+                            <h2><i class="fas fa-images"></i> Unggah Foto</h2>
+                            <p class="form-hint">Upload foto yang menunjukan masalah (maks. 5 foto)</p>
+                        </div>
+
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Klik atau drag & drop foto di sini</p>
+                                <span>Format: JPG, PNG, atau GIF (maks. 5MB per file)</span>
+                            </div>
+                            <input type="file" id="photos" name="photos" accept="image/*" multiple hidden>
+                        </div>
+
+                        <div id="previewArea" class="preview-area" style="display: none;">
+                            <div class="preview-images" id="previewImages"></div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="form-group">
+                        <div class="form-header">
+                            <h2><i class="fas fa-user"></i> Informasi Kontak</h2>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="name">Nama Lengkap <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="phone">Nomor Telepon <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" required placeholder="081234567890">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="nama@email.com">
+                        </div>
+
+                        <div class="form-field">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="anonymous" name="anonymous">
+                                <span>Kirim sebagai laporan anonim</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Priority -->
+                    <div class="form-group">
+                        <div class="form-header">
+                            <h2><i class="fas fa-exclamation-triangle"></i> Tingkat Prioritas</h2>
+                        </div>
+
+                        <div class="priority-options">
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="low" checked>
+                                <div class="priority-content">
+                                    <i class="fas fa-circle" style="color: #28a745;"></i>
+                                    <div>
+                                        <strong>Rendah</strong>
+                                        <p>Masalah dapat ditangani dalam waktu normal</p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="medium">
+                                <div class="priority-content">
+                                    <i class="fas fa-circle" style="color: #ffc107;"></i>
+                                    <div>
+                                        <strong>Sedang</strong>
+                                        <p>Memerlukan perhatian dalam waktu dekat</p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="priority-option">
+                                <input type="radio" name="priority" value="high">
+                                <div class="priority-content">
+                                    <i class="fas fa-circle" style="color: #dc3545;"></i>
+                                    <div>
+                                        <strong>Tinggi</strong>
+                                        <p>Memerlukan penanganan segera</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="saveDraft()">
+                            <i class="fas fa-save"></i> Simpan Draf
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Kirim Laporan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-handshake"></i> Aspirana</h3>
+                    <p>Platform transparan yang menghubungkan masyarakat dengan pemerintah untuk perubahan yang lebih baik.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="report-form.html">Kirim Laporan</a></li>
+                        <li><a href="report-list.html">Lihat Laporan</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aspirana. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Laporan Berhasil Dikirim!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Terima kasih telah mengirimkan laporan. Kami akan segera memproses laporan Anda.</p>
+                <p><strong>ID Laporan:</strong> <span id="reportId">LPR-2024-12345</span></p>
+                <p>Anda dapat memantau status laporan di halaman dashboard.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="closeModal()">Tutup</button>
+                <button class="btn-secondary" onclick="viewReport()">Lihat Status</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // File upload preview
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('photos');
+        const previewArea = document.getElementById('previewArea');
+        const previewImages = document.getElementById('previewImages');
+
+        uploadArea.addEventListener('click', () => fileInput.click());
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('drag-over');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('drag-over');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('drag-over');
+            handleFiles(e.dataTransfer.files);
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+
+        function handleFiles(files) {
+            if (files.length === 0) return;
+
+            previewImages.innerHTML = '';
+            previewArea.style.display = 'block';
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const preview = document.createElement('div');
+                    preview.className = 'preview-item';
+                    preview.innerHTML = `
+                        <img src="${e.target.result}" alt="Preview">
+                        <button type="button" class="remove-image" onclick="this.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    previewImages.appendChild(preview);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Get current location
+        function getCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    document.getElementById('lat').value = position.coords.latitude.toFixed(6);
+                    document.getElementById('lng').value = position.coords.longitude.toFixed(6);
+                    alert('Lokasi berhasil didapatkan!');
+                });
+            } else {
+                alert('Geolocation tidak didukung di browser ini.');
+            }
+        }
+
+        // Save draft
+        function saveDraft() {
+            const formData = new FormData(document.getElementById('reportForm'));
+            localStorage.setItem('reportDraft', JSON.stringify(Object.fromEntries(formData)));
+            alert('Draf berhasil disimpan!');
+        }
+
+        // Form submission
+        document.getElementById('reportForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('successModal').style.display = 'flex';
+        });
+
+        function closeModal() {
+            document.getElementById('successModal').style.display = 'none';
+            window.location.href = 'report-list.html';
+        }
+
+        function viewReport() {
+            window.location.href = 'report-list.html';
+        }
+    </script>
+</body>
+</html>
+

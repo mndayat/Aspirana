@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspirana - Jembatan Masyarakat & Pemerintah</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-handshake"></i>
+                <span>Aspirana</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="report-list.html">Laporan</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="map.html">Peta</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <button class="btn-primary" onclick="window.location.href='report-form.html'">
+                <i class="fas fa-plus"></i> Kirim Laporan
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Salurkan Aspirasi, Wujudkan Perubahan</h1>
+            <p>Platform transparan untuk menyampaikan keluhan dan aspirasi masyarakat kepada pemerintah</p>
+            <div class="hero-buttons">
+                <a href="report-form.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-edit"></i> Kirim Laporan
+                </a>
+                <a href="report-list.html" class="btn btn-secondary btn-large">
+                    <i class="fas fa-list"></i> Lihat Laporan
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">1,234</h3>
+                        <p class="stat-label">Laporan Terkirim</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">856</h3>
+                        <p class="stat-label">Ditangani</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">5,678</h3>
+                        <p class="stat-label">Pengguna Aktif</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">2.5</h3>
+                        <p class="stat-label">Hari Rata-Rata</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Akses Cepat</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Kirim Laporan</h3>
+                    <p>Laporkan masalah publik dengan mudah dan cepat. Upload foto, tentukan lokasi, dan pilih kategori.</p>
+                    <a href="report-form.html" class="feature-link">Mulai Sekarang <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Peta Interaktif</h3>
+                    <p>Lihat sebaran laporan di wilayah Anda dengan peta interaktif yang menampilkan semua laporan aktif.</p>
+                    <a href="map.html" class="feature-link">Lihat Peta <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Forum Publik</h3>
+                    <p>Bergabung dalam diskusi masyarakat dan berikan dukungan terhadap isu-isu yang berkembang.</p>
+                    <a href="forum.html" class="feature-link">Masuk Forum <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Reports -->
+    <section class="reports-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Laporan Terkini</h2>
+                <a href="report-list.html" class="view-all">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="reports-grid">
+                <div class="report-card">
+                    <div class="report-header">
+                        <span class="report-category infrastructure">
+                            <i class="fas fa-road"></i> Infrastruktur
+                        </span>
+                        <span class="report-status status-verified">
+                            <i class="fas fa-check"></i> Diverifikasi
+                        </span>
+                    </div>
+                    <div class="report-body">
+                        <h3>Jalan Berlubang di Jl. Sudirman</h3>
+                        <p>Jalan rusak dengan beberapa lubang besar yang membahayakan pengendara...</p>
+                        <div class="report-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Jakarta Pusat</span>
+                            <span><i class="fas fa-clock"></i> 2 jam lalu</span>
+                        </div>
+                    </div>
+                    <div class="report-footer">
+                        <div class="report-support">
+                            <i class="fas fa-thumbs-up"></i> 45 Dukungan
+                        </div>
+                        <a href="#" class="report-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <span class="report-category environment">
+                            <i class="fas fa-leaf"></i> Lingkungan
+                        </span>
+                        <span class="report-status status-processing">
+                            <i class="fas fa-spinner"></i> Diproses
+                        </span>
+                    </div>
+                    <div class="report-body">
+                        <h3>Sampah Menumpuk di Pasar Tradisional</h3>
+                        <p>Gerombolan sampah sudah tidak tertampung di tempat pembuangan...</p>
+                        <div class="report-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Jakarta Selatan</span>
+                            <span><i class="fas fa-clock"></i> 5 jam lalu</span>
+                        </div>
+                    </div>
+                    <div class="report-footer">
+                        <div class="report-support">
+                            <i class="fas fa-thumbs-up"></i> 78 Dukungan
+                        </div>
+                        <a href="#" class="report-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <span class="report-category utilities">
+                            <i class="fas fa-tint"></i> Pelayanan
+                        </span>
+                        <span class="report-status status-resolved">
+                            <i class="fas fa-check-circle"></i> Selesai
+                        </span>
+                    </div>
+                    <div class="report-body">
+                        <h3>Air Bersih Tidak Mengalir</h3>
+                        <p>Air PAM sudah 3 hari tidak mengalir di komplek perumahan...</p>
+                        <div class="report-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Jakarta Barat</span>
+                            <span><i class="fas fa-clock"></i> 1 hari lalu</span>
+                        </div>
+                    </div>
+                    <div class="report-footer">
+                        <div class="report-support">
+                            <i class="fas fa-thumbs-up"></i> 92 Dukungan
+                        </div>
+                        <a href="#" class="report-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-header">
+                        <span class="report-category transportation">
+                            <i class="fas fa-bus"></i> Transportasi
+                        </span>
+                        <span class="report-status status-pending">
+                            <i class="fas fa-hourglass"></i> Terkirim
+                        </span>
+                    </div>
+                    <div class="report-body">
+                        <h3>Halte Bus Rusak</h3>
+                        <p>Halte bus umum di area perkantoran sudah rusak dan perlu diperbaiki...</p>
+                        <div class="report-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Jakarta Utara</span>
+                            <span><i class="fas fa-clock"></i> 3 jam lalu</span>
+                        </div>
+                    </div>
+                    <div class="report-footer">
+                        <div class="report-support">
+                            <i class="fas fa-thumbs-up"></i> 34 Dukungan
+                        </div>
+                        <a href="#" class="report-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-handshake"></i> Aspirana</h3>
+                    <p>Platform transparan yang menghubungkan masyarakat dengan pemerintah untuk perubahan yang lebih baik.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="report-form.html">Kirim Laporan</a></li>
+                        <li><a href="report-list.html">Lihat Laporan</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kategori</h4>
+                    <ul>
+                        <li><a href="#">Infrastruktur</a></li>
+                        <li><a href="#">Lingkungan</a></li>
+                        <li><a href="#">Pelayanan Publik</a></li>
+                        <li><a href="#">Transportasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@aspirana.id</li>
+                        <li><i class="fas fa-phone"></i> +62 21 5555 1234</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aspirana. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

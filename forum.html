@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Aspirasi - Aspirana</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-handshake"></i>
+                <span>Aspirana</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="report-list.html">Laporan</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="map.html">Peta</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <button class="btn-primary" onclick="window.location.href='report-form.html'">
+                <i class="fas fa-plus"></i> Kirim Laporan
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-comments"></i> Forum Aspirasi Publik</h1>
+            <p>Diskusikan isu dan berikan dukungan terhadap laporan masyarakat</p>
+        </div>
+    </section>
+
+    <!-- Forum Content -->
+    <section class="forum-section">
+        <div class="container">
+            <div class="forum-layout">
+                <!-- Main Forum -->
+                <div class="forum-main">
+                    <div class="forum-header">
+                        <div class="forum-actions">
+                            <button class="btn-primary">
+                                <i class="fas fa-plus"></i> Buat Topik Baru
+                            </button>
+                            <div class="forum-sort">
+                                <label>Urutkan:</label>
+                                <select>
+                                    <option>Terbaru</option>
+                                    <option>Terpopuler</option>
+                                    <option>Paling Banyak Komentar</option>
+                                    <option>Paling Banyak Dukungan</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Forum Topics -->
+                    <div class="forum-topics">
+                        <!-- Topic 1 -->
+                        <div class="topic-card">
+                            <div class="topic-header">
+                                <div class="topic-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="topic-info">
+                                    <h3>Angkutan Umum Belum Mampu Mencakup Semua Area</h3>
+                                    <div class="topic-meta">
+                                        <span><i class="fas fa-user"></i> Budi Santoso</span>
+                                        <span><i class="fas fa-clock"></i> 3 jam lalu</span>
+                                        <span class="topic-category">Transportasi</span>
+                                    </div>
+                                </div>
+                                <div class="topic-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-thumbs-up"></i> 124
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-comment"></i> 23
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="topic-body">
+                                <p>Masih banyak wilayah di Jakarta yang belum tercover oleh angkutan umum. Warga harus berjalan jauh atau menggunakan ojek online yang mahal. Apakah ada rencana penambahan rute dan armada?</p>
+                                <div class="topic-tags">
+                                    <span class="tag">Transportasi</span>
+                                    <span class="tag">Angkutan Umum</span>
+                                    <span class="tag">Jakarta</span>
+                                </div>
+                            </div>
+                            <div class="topic-footer">
+                                <button class="topic-action">
+                                    <i class="fas fa-thumbs-up"></i> Dukung
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-comment"></i> Komentar
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-share"></i> Bagikan
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Topic 2 -->
+                        <div class="topic-card">
+                            <div class="topic-header">
+                                <div class="topic-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="topic-info">
+                                    <h3>Program Bank Sampah Perlu Perluasan</h3>
+                                    <div class="topic-meta">
+                                        <span><i class="fas fa-user"></i> Siti Nurhaliza</span>
+                                        <span><i class="fas fa-clock"></i> 6 jam lalu</span>
+                                        <span class="topic-category">Lingkungan</span>
+                                    </div>
+                                </div>
+                                <div class="topic-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-thumbs-up"></i> 89
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-comment"></i> 31
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="topic-body">
+                                <p>Program bank sampah yang ada di beberapa kelurahan sudah sangat baik dampaknya. Namun masih banyak RW yang belum memiliki program ini. Harap pemerintah membantu perluasan program bank sampah ke seluruh kelurahan.</p>
+                                <div class="topic-tags">
+                                    <span class="tag">Lingkungan</span>
+                                    <span class="tag">Bank Sampah</span>
+                                    <span class="tag">Ekonomi Hijau</span>
+                                </div>
+                            </div>
+                            <div class="topic-footer">
+                                <button class="topic-action">
+                                    <i class="fas fa-thumbs-up"></i> Dukung
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-comment"></i> Komentar
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-share"></i> Bagikan
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Topic 3 -->
+                        <div class="topic-card">
+                            <div class="topic-header">
+                                <div class="topic-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="topic-info">
+                                    <h3>Fasilitas Parkir Sepeda di Stasiun KRL</h3>
+                                    <div class="topic-meta">
+                                        <span><i class="fas fa-user"></i> Ahmad Fauzi</span>
+                                        <span><i class="fas fa-clock"></i> 9 jam lalu</span>
+                                        <span class="topic-category">Infrastruktur</span>
+                                    </div>
+                                </div>
+                                <div class="topic-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-thumbs-up"></i> 156
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-comment"></i> 42
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="topic-body">
+                                <p>Banyak orang yang berkomuter menggunakan sepeda ke stasiun, tapi fasilitas parkir sepeda di stasiun-stasiun KRL masih terbatas dan kurang aman. Perlu penambahan area parkir sepeda yang lebih luas dan terjaga.</p>
+                                <div class="topic-tags">
+                                    <span class="tag">Infrastruktur</span>
+                                    <span class="tag">KRL</span>
+                                    <span class="tag">Sepeda</span>
+                                </div>
+                            </div>
+                            <div class="topic-footer">
+                                <button class="topic-action">
+                                    <i class="fas fa-thumbs-up"></i> Dukung
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-comment"></i> Komentar
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-share"></i> Bagikan
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Topic 4 -->
+                        <div class="topic-card">
+                            <div class="topic-header">
+                                <div class="topic-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="topic-info">
+                                    <h3>Digitalisasi Layanan Administrasi Kelurahan</h3>
+                                    <div class="topic-meta">
+                                        <span><i class="fas fa-user"></i> Rina Wijaya</span>
+                                        <span><i class="fas fa-clock"></i> 1 hari lalu</span>
+                                        <span class="topic-category">Pelayanan</span>
+                                    </div>
+                                </div>
+                                <div class="topic-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-thumbs-up"></i> 203
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-comment"></i> 67
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="topic-body">
+                                <p>Di era digital seperti sekarang, masyarakat masih harus antri panjang untuk urusan administrasi seperti KTP, KK, dll. Perlu ada aplikasi atau website yang memungkinkan pengajuan online untuk mengurangi antrian.</p>
+                                <div class="topic-tags">
+                                    <span class="tag">Pelayanan</span>
+                                    <span class="tag">Digitalisasi</span>
+                                    <span class="tag">Kelurahan</span>
+                                </div>
+                            </div>
+                            <div class="topic-footer">
+                                <button class="topic-action">
+                                    <i class="fas fa-thumbs-up"></i> Dukung
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-comment"></i> Komentar
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-share"></i> Bagikan
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Topic 5 -->
+                        <div class="topic-card">
+                            <div class="topic-header">
+                                <div class="topic-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="topic-info">
+                                    <h3>Penguatan Patroli di Wilayah Pemukiman</h3>
+                                    <div class="topic-meta">
+                                        <span><i class="fas fa-user"></i> Bambang Sutrisno</span>
+                                        <span><i class="fas fa-clock"></i> 1 hari lalu</span>
+                                        <span class="topic-category">Keamanan</span>
+                                    </div>
+                                </div>
+                                <div class="topic-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-thumbs-up"></i> 178
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-comment"></i> 54
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="topic-body">
+                                <p>Beberapa wilayah pemukiman masih rawan dengan kejahatan, terutama di malam hari. Perlu ada penguatan patroli keamanan dari polisi maupun satpam kelurahan untuk memberikan rasa aman kepada warga.</p>
+                                <div class="topic-tags">
+                                    <span class="tag">Keamanan</span>
+                                    <span class="tag">Patroli</span>
+                                    <span class="tag">Pemukiman</span>
+                                </div>
+                            </div>
+                            <div class="topic-footer">
+                                <button class="topic-action">
+                                    <i class="fas fa-thumbs-up"></i> Dukung
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-comment"></i> Komentar
+                                </button>
+                                <button class="topic-action">
+                                    <i class="fas fa-share"></i> Bagikan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn"><i class="fas fa-chevron-left"></i> Sebelumnya</button>
+                        <div class="page-numbers">
+                            <button class="page-number active">1</button>
+                            <button class="page-number">2</button>
+                            <button class="page-number">3</button>
+                            <span>...</span>
+                            <button class="page-number">10</button>
+                        </div>
+                        <button class="page-btn">Selanjutnya <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="forum-sidebar">
+                    <!-- Top Topics -->
+                    <div class="sidebar-card">
+                        <div class="sidebar-header">
+                            <h3><i class="fas fa-fire"></i> Topik Populer</h3>
+                        </div>
+                        <div class="top-topics">
+                            <div class="top-topic-item">
+                                <span class="topic-rank">1</span>
+                                <div class="topic-content">
+                                    <h4>Angkutan Umum Belum Mampu...</h4>
+                                    <span>124 dukungan</span>
+                                </div>
+                            </div>
+                            <div class="top-topic-item">
+                                <span class="topic-rank">2</span>
+                                <div class="topic-content">
+                                    <h4>Fasilitas Parkir Sepeda...</h4>
+                                    <span>156 dukungan</span>
+                                </div>
+                            </div>
+                            <div class="top-topic-item">
+                                <span class="topic-rank">3</span>
+                                <div class="topic-content">
+                                    <h4>Digitalisasi Layanan...</h4>
+                                    <span>203 dukungan</span>
+                                </div>
+                            </div>
+                            <div class="top-topic-item">
+                                <span class="topic-rank">4</span>
+                                <div class="topic-content">
+                                    <h4>Penguatan Patroli...</h4>
+                                    <span>178 dukungan</span>
+                                </div>
+                            </div>
+                            <div class="top-topic-item">
+                                <span class="topic-rank">5</span>
+                                <div class="topic-content">
+                                    <h4>Program Bank Sampah...</h4>
+                                    <span>89 dukungan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-card">
+                        <div class="sidebar-header">
+                            <h3><i class="fas fa-tags"></i> Kategori</h3>
+                        </div>
+                        <div class="sidebar-categories">
+                            <a href="#" class="category-item">
+                                <i class="fas fa-bus"></i> Transportasi
+                                <span>156 topik</span>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-road"></i> Infrastruktur
+                                <span>234 topik</span>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-leaf"></i> Lingkungan
+                                <span>189 topik</span>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-tint"></i> Pelayanan
+                                <span>145 topik</span>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-shield-alt"></i> Keamanan
+                                <span>98 topik</span>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-stethoscope"></i> Kesehatan
+                                <span>78 topik</span>
+                            </a>
+                            <a href="#" class="category-item">
+                                <i class="fas fa-graduation-cap"></i> Pendidikan
+                                <span>65 topik</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Forum Stats -->
+                    <div class="sidebar-card">
+                        <div class="sidebar-header">
+                            <h3><i class="fas fa-chart-line"></i> Statistik Forum</h3>
+                        </div>
+                        <div class="forum-stats">
+                            <div class="stat-row">
+                                <span>Total Topik</span>
+                                <strong>1,234</strong>
+                            </div>
+                            <div class="stat-row">
+                                <span>Total Komentar</span>
+                                <strong>5,678</strong>
+                            </div>
+                            <div class="stat-row">
+                                <span>Pengguna Aktif</span>
+                                <strong>2,456</strong>
+                            </div>
+                            <div class="stat-row">
+                                <span>Topik Hari Ini</span>
+                                <strong>23</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-handshake"></i> Aspirana</h3>
+                    <p>Platform transparan yang menghubungkan masyarakat dengan pemerintah untuk perubahan yang lebih baik.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="report-form.html">Kirim Laporan</a></li>
+                        <li><a href="report-list.html">Lihat Laporan</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aspirana. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
